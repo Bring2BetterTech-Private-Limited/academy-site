@@ -12,3 +12,8 @@ application form to `/api/public/apply/` there.
 
 Preview address: academy-site-preview.bring2bettertech.com (see `CNAME`). The Academy must list this origin in
 `ACADEMY_PUBLIC_SITE_ORIGINS`.
+
+To publish changes, run `scripts/publish_site.sh` from the private academy repository. It adds a commit on top of
+the live `main` branch instead of replacing it, because GitHub commits the `CNAME` file there when the domain is
+changed in Settings > Pages.
+
