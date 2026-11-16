@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply · B2BT Academy</title>
+  <link rel="icon" type="image/svg+xml" href="assets/b2bt-mark-reversed.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/config.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site"><div class="bar">
+    <a class="brand" href="./"><img src="assets/b2bt-mark-reversed.svg" alt="Bring2Better Tech logo"> B2BT Academy</a>
+    <nav aria-label="Main"><a href="./">Home</a><a data-portal href="#">Sign in</a></nav>
+  </div></header>
+
+  <main id="main" class="narrow">
+    <div id="form-view">
+      <h1>Apply to B2BT Academy</h1>
+      <p class="muted">It takes about 5 minutes. Keep a photo or scan of an ID proof and a passport-size photo ready.
+        Fields marked optional can be left empty.</p>
+      <div id="status" role="status" aria-live="polite"></div>
+      <div id="problem" class="notice error" role="alert" tabindex="-1" hidden></div>
+
+      <form id="apply" novalidate hidden>
+        <div class="trap" aria-hidden="true"><label for="f-website">Leave this empty</label>
+          <input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="opened" id="f-opened">
+
+        <fieldset><legend>About you</legend>
+          <label for="f-name">Full name</label><input id="f-name" name="name" maxlength="120" autocomplete="name" required>
+          <label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required>
+          <label for="f-phone">Mobile number</label><input id="f-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" required>
+          <label for="f-date_of_birth">Date of birth</label><input id="f-date_of_birth" name="date_of_birth" type="date" required>
+        </fieldset>
+
+        <fieldset><legend>Course</legend>
+          <label for="f-course">Course</label><select id="f-course" name="course" required></select>
+          <label for="f-preferred_batch">Preferred batch (optional)</label><select id="f-preferred_batch" name="preferred_batch"></select>
+          <label for="f-how_heard">How did you hear about us? (optional)</label><input id="f-how_heard" name="how_heard" maxlength="120">
+        </fieldset>
+
+        <fieldset><legend>Education and work</legend>
+          <label for="f-qualification">Highest qualification</label><input id="f-qualification" name="qualification" maxlength="120" required>
+          <label for="f-institution">College or institution</label><input id="f-institution" name="institution" maxlength="160" required>
+          <label for="f-passing_year">Year of passing (optional)</label><input id="f-passing_year" name="passing_year" type="number" min="1970" inputmode="numeric">
+          <label for="f-work_status">Right now you are</label><select id="f-work_status" name="work_status" required></select>
+          <label for="f-employer">Employer (optional)</label><input id="f-employer" name="employer" maxlength="160">
+          <label for="f-job_role">Job role (optional)</label><input id="f-job_role" name="job_role" maxlength="120">
+          <label for="f-experience_years">Years of work experience (optional)</label><input id="f-experience_years" name="experience_years" type="number" min="0" max="60" step="0.5" inputmode="decimal">
+        </fieldset>
+
+        <fieldset><legend>Address and guardian</legend>
+          <label for="f-address">Address</label><input id="f-address" name="address" maxlength="300" autocomplete="street-address" required>
+          <label for="f-city">City</label><input id="f-city" name="city" maxlength="80" autocomplete="address-level2" required>
+          <label for="f-state">State</label><input id="f-state" name="state" maxlength="80" autocomplete="address-level1" required>
+          <label for="f-pincode">PIN code</label><input id="f-pincode" name="pincode" maxlength="10" inputmode="numeric" autocomplete="postal-code" required>
+          <label for="f-guardian_name">Parent or guardian name</label><input id="f-guardian_name" name="guardian_name" maxlength="120">
+          <label for="f-guardian_relation">Relation</label><input id="f-guardian_relation" name="guardian_relation" maxlength="40">
+          <label for="f-guardian_phone">Parent or guardian mobile</label><input id="f-guardian_phone" name="guardian_phone" type="tel" maxlength="20">
+          <p class="helptext">Parent or guardian details are needed only if you are under 18.</p>
+        </fieldset>
+
+        <fieldset><legend>Documents</legend>
+          <label for="f-id_proof">ID proof (JPG, PNG or PDF, up to 2 MB)</label>
+          <input id="f-id_proof" name="id_proof" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" required>
+          <label for="f-photo">Passport-size photo (JPG or PNG, up to 2 MB)</label>
+          <input id="f-photo" name="photo" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required>
+          <p class="helptext">Only B2BT Academy admins can see these. Do not upload anything else.</p>
+        </fieldset>
+
+        <fieldset class="consent"><legend>Consent</legend>
+          <label for="f-consent"><input id="f-consent" name="consent" type="checkbox" value="on" required> <span id="consent-text"></span></label>
+        </fieldset>
+        <button type="submit" id="send">Send application</button>
+      </form>
+    </div>
+
+    <div id="done-view" hidden tabindex="-1">
+      <div class="card">
+        <h1>Thank you</h1>
+        <p>We have received your application. The B2BT Academy team will review it and contact you on the email or mobile number you gave.</p>
+        <p class="muted">If you applied by mistake or want your details corrected or deleted, contact B2BT Academy.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site">Bring2Better Tech Private Limited</footer>
+  <script src="assets/apply.js"></script>
+</body>
+</html>
